@@ -16,7 +16,7 @@ app.engine('.hbs', engine({
 	partialsDir: path.join(baseDir, '/src/views/partials'),
 }));
 
-Handlebars.registerHelper('ifEquals', function (arg1, arg2, options) {
+Handlebars.registerHelper('ifEquals', (arg1, arg2, options) => {
     return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
 });
 
@@ -25,7 +25,7 @@ app.set('views', path.join(baseDir, '/src/views'));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-	res.render('welcome', { version });
+	res.render('pages/welcome', { version });
 });
 
 app.get('/books', async (req, res) => {
