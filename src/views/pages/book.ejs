@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<%- include('../partials/htmlHead') %>
+	<meta property="og:title" content="<%=book.title%>"/>
+    <meta property="og:description" content="<%=book.description%>"/>
+    <meta property="og:image" content="https://et370-node-express-ejs-site.onrender.com/images/books/<%=book.idCode%>.png"/>
+	<link rel="stylesheet" href="../css/main.css">
+    <title>Info Site</title>
+</head>
+
+<body>
+	<%- include('../partials/header') %>
+    <%- include('../partials/menu', {pageIdCode: 'book'})%>
+    <div class="book">
+		<img class="book" src="../images/books/<%=book.idCode%>.png"/>
+		<div>
+			<p class="title"><%=book.title%></p>
+			<p class="description"><%=book.description%></p>
+			<p class="amazon"><a target="_blank" href="<%=book.buyUrl%>">Buy at Amazon</a></p>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+body {
+	background-color: #bbb;
+	padding: 0 1rem;
+	font-family: sans-serif;
+}
+
+nav {
+	background-color: #aaa;
+	padding: .5rem;
+	display: flex;
+	gap: 1rem;
+}
+
+nav a {
+	text-decoration: none;
+	color: #333;
+}
+
+nav a.active {
+	color: brown;
+	font-weight: bold;
+}
+
+.danger {
+	color: red;
+	background-color: #333;
+	padding: 1rem;
+	border-radius: .3rem;
+}
+
+div.books {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+img.book {
+	width: 10rem;
+	height: fit-content;
+}
+
+div.book {
+	display: flex;
+	gap: 1rem;
+	margin-top: 2rem;
+	width: 60rem;
+}
+
+div.book p.title {
+	font-size: 1.7rem;
+	margin: 0;
+}
+
+div.book p.description {
+	font-style: italic;
+}

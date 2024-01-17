@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<%- include('../partials/htmlHead') %>
+	<link rel="stylesheet" href="css/main.css">
+    <meta property="og:title" content="Edward's books'"/>
+    <meta property="og:description" content="These are all of Edward's books that he is currently reading.'"/>
+    <title>Info Site</title>
+</head>
+
+<body>
+	<%- include('../partials/header') %>
+    <%- include('../partials/menu', {pageIdCode: 'books'})%>
+    <div>
+        <p>There are
+            <%= books.length %> books.
+        </p>
+        <div class="books">
+            <% books.forEach((book) => { %>
+                <a href="book/<%=book.idCode%>"><img class="book" src="images/books/<%=book.idCode%>.png"/></a>
+            <% }) %>
+        </div>
+    </div>
+</body>
+
+</html>
