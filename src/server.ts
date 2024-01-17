@@ -8,7 +8,13 @@ const app = express();
 const baseDir = process.cwd();
 const version = '1.0';
 
-app.engine('.hbs', engine({ extname: '.hbs' }));
+app.engine('.hbs', engine({
+	extname: '.hbs',
+	defaultLayout: 'main',
+	layoutsDir: path.join(baseDir, '/src/views/layouts'),
+	partialsDir: path.join(baseDir, '/src/views/partials'),
+
+}));
 app.set('view engine', '.hbs');
 app.set('views', path.join(baseDir, '/src/views'));
 app.use(express.static('public'));
