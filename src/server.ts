@@ -8,7 +8,6 @@ const app = express();
 const baseDir = process.cwd();
 const version = '1.0';
 
-
 app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 app.set('views', path.join(baseDir, '/src/views'));
