@@ -2,20 +2,20 @@ import express from 'express';
 import * as config from './config';
 import path from 'path';
 import * as model from './model';
+import { engine } from 'express-handlebars';
 
 const app = express();
 const baseDir = process.cwd();
+const version = '1.0';
 
-app.set('view engine', 'ejs');
+
+app.engine('.hbs', engine({ extname: '.hbs' }));
+app.set('view engine', '.hbs');
 app.set('views', path.join(baseDir, '/src/views'));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-	res.render('pages/welcome');
-});
-
-app.get('/welcome', (req, res) => {
-	res.render('pages/welcome');
+	res.render('welcome', { version });
 });
 
 app.get('/books', async (req, res) => {
