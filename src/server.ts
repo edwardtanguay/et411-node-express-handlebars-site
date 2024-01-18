@@ -22,7 +22,7 @@ Handlebars.registerHelper('ifEquals', (arg1, arg2, options) => {
 
 app.set('view engine', '.hbs');
 app.set('views', path.join(baseDir, '/src/views'));
-app.use(express.static('public'));
+app.use(express.static(path.join(baseDir, 'public')));
 
 app.get('/', (req, res) => {
 	res.render('pages/welcome', { version });

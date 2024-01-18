@@ -1,0 +1,11 @@
+{{>menu pageIdCode="books"}}
+
+<div class="book">
+	<img class="book"
+		 src="../images/books/{{{book.idCode}}}.png" />
+	<div>
+		<p class="title">{{{book.title}}}</p>
+		<p class="description">{{{book.description}}}</p>
+		<p class="amazon"><a target="_blank" href="{{{book.buyUrl}}}">Buy at Amazon</a></p>
+	</div>
+</div>
