@@ -25,18 +25,18 @@ app.set('views', path.join(baseDir, '/src/views'));
 app.use(express.static(path.join(baseDir, 'public')));
 
 app.get('/', (req, res) => {
-	res.render('pages/welcome', { version });
+	res.render('pages/welcome', {version });
 });
 
 app.get('/books', async (req, res) => {
-	res.render('pages/books', { books: await model.getBooks() });
+	res.render('pages/books', {pageIdCode: 'books', books: await model.getBooks() });
 });
 
 app.get('/book/:idCode', async (req, res) => {
 	const idCode = req.params.idCode;
 	const books = await model.getBooks();
 	const book = books.find(m => m.idCode === idCode);
-	res.render('pages/book', { book });
+	res.render('pages/book', {pageIdCode: 'book', test: 'ok', book });
 });
 
 app.get('/about', (req, res) => {
