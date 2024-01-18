@@ -1,8 +1,12 @@
 {{>menu pageIdCode="books"}}
-<p>There are {{{books.length}}} books.</p>
 
-<ul>
-  {{#books}}
-    <li>{{title}}</li>
-  {{/books}}
-</ul>
+<div>
+	<p>There are {{{books.length}}} books.</p>
+	</p>
+	<div class="books">
+		{{#books}}
+		<a href="book/{{{idCode}}}"><img class="book"
+				 src="images/books/{{{idCode}}}.png" /></a>
+		{{/books}}
+	</div>
+</div>
